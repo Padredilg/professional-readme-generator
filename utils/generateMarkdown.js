@@ -93,13 +93,47 @@ function generateLicense(confirm, license){
     renderLicenseSection(license);
 
     return `## License
-    ${license}
-    `
+${license}
+`
   }
   else{
     return '';
   }
 }
+
+function generateContributing(confirm, guidelines){
+  if(confirm){
+    return `## Contributing
+${guidelines}
+`
+  }
+  else{
+    return '';
+  }
+}
+
+function generateTests(confirm, tests){
+  if(confirm){
+    return `## Tests
+${tests}
+`
+  }
+  else{
+    return '';
+  }
+}
+
+function generateProblemsAndBugs(confirm, problemsAndBugs){
+  if(confirm){
+    return `## Problems and Bugs
+${problemsAndBugs}
+`
+  }
+  else{
+    return '';
+  }
+}
+
 
 function generateMarkdown(data) {
 
@@ -112,8 +146,12 @@ ${data.description}
 ${generateInstallation(data.confirmInstallation, data.installationDescription)}
 ${generateUsage(data.confirmUsage, data.usageDescription, data)}
 ${generateLicense(data.confirmLicense, data.license)}
+${generateContributing(data.confirmContributing, data.contributingGuidelines)}
+${generateTests(data.confirmTests, data.tests)}
+${generateProblemsAndBugs(data.confirmProblemsAndBugs, data.problemsAndBugs)}
 `;
 }
-//include remaining generated info in template
+//now need to make license stuff work
+//and get all this info to render on the README.md
 
 module.exports = generateMarkdown;
