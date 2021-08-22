@@ -1,202 +1,207 @@
-// TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
+const generateReadMe = require('./utils/generateMarkdown.js');
+
+const questions = [
+    {//title
+        type: 'input',
+        name: 'title',
+        message: 'What is the title for your project?',
+        validate: titleInput => {
+            if(titleInput){
+                return true;
+            }
+            else{
+                console.log('Please enter the title for your project!');
+                return false;
+            }
+        }
+    },
+    {//description
+        type: 'input',
+        name: 'description',
+        message: 'Enter a description for your project:',
+        validate: description => {
+            if(description){
+                return true;
+            }
+            else{
+                console.log('Please enter a description for your project!');
+                return false;
+            }
+        }
+    },
+    {//confirmTableOfContents
+        type: 'confirm',
+        name: 'confirmTableOfContents',
+        message: 'Would you like to include a Table of Contents?',
+        default: true
+    },
+    {//confirmInstallation
+        type: 'confirm',
+        name: 'confirmInstallation',
+        message: 'Would you like to include an Installation section?',
+        default: true
+    },
+    {//InstallationDescription
+        type: 'input',
+        name: 'installationDescription',
+        message: 'include a description on how to install your application:',
+        when: ({confirmInstallation}) => confirmInstallation,
+        validate: installationDescriptionInput => {
+            if(installationDescriptionInput){
+                return true;
+            }
+            else{
+                console.log('Please enter a description for how to install your application!');
+                return false;
+            }
+        }
+    },
+    {//confirmUsage
+        type: 'confirm',
+        name: 'confirmUsage',
+        message: 'Would you like to include a Usage section?',
+        default: true
+    },
+    {//usageDescription
+        type: 'input',
+        name: 'usageDescription',
+        message: 'include a description on how the application is intended to be used:',
+        when: ({confirmUsage}) => confirmUsage,
+        validate: usageDescriptionInput => {
+            if(usageDescriptionInput){
+                return true;
+            }
+            else{
+                console.log('Please enter a description on how to use your application!');
+                return false;
+            }
+        }
+    },
+    {//confirmUsageSS
+        type: 'confirm',
+        name: 'confirmUsageSS',
+        message: 'Would you like to include a screenshot of your application?',
+        default: true
+    },
+    {//usageImage
+        type: 'input',
+        name: 'usageImage',
+        message: "Provide relative path from your directory's root to the screenshot of your application:",
+        when: ({confirmUsageSS}) => confirmUsageSS,
+        validate: usageDescriptionInput => {
+            if(usageDescriptionInput){
+                return true;
+            }
+            else{
+                console.log("Provide relative path from your directory's root to the screenshot of your application!");
+                return false;
+            }
+        }
+    },
+    {//confirmLicense
+        type: 'confirm',
+        name: 'confirmLicense',
+        message: 'Would you like to include a License?',
+        default: true
+    },
+    {//license
+        type: 'input',
+        name: 'license',
+        message: 'Enter License name:',
+        when: ({confirmLicense}) => confirmLicense,
+        validate: licenseInput => {
+            if(licenseInput){
+                return true;
+            }
+            else{
+                console.log('Please enter a name for the License!');
+                return false;
+            }
+        }
+    },
+    {//confirmContributing
+        type: 'confirm',
+        name: 'confirmContributing',
+        message: 'Would you like to include a Contributing section?',
+        default: true
+    },
+    {//contributingGuidelines
+        type: 'input',
+        name: 'contributingGuidelines',
+        message: 'Please specify the guidelines for contributing:',
+        when: ({confirmContributing}) => confirmContributing,
+        validate: contributingGuidelinesInput => {
+            if(contributingGuidelinesInput){
+                return true;
+            }
+            else{
+                console.log('Please specify the guidelines for contributing!');
+                return false;
+            }
+        }
+    },
+    {//confirmTests
+        type: 'confirm',
+        name: 'confirmTests',
+        message: 'Would you like to include a Tests section?',
+        default: true
+    },
+    {//tests
+        type: 'input',
+        name: 'tests',
+        message: 'Give users explicit instructions on how to run all necessary tests:',
+        when: ({confirmTests}) => confirmTests,
+        validate: testsInput => {
+            if(testsInput){
+                return true;
+            }
+            else{
+                console.log('Provide instructions on how to run all necessary tests!');
+                return false;
+            }
+        }
+    },
+    {//confirmProblemsAndBugs
+        type: 'confirm',
+        name: 'confirmProblemsAndBugs',
+        message: 'Would you like to include a "Common Problems and Bugs" section?',
+        default: true
+    },
+    {//problemsAndBugs
+        type: 'input',
+        name: 'problemsAndBugs',
+        message: 'Describe common problems and bugs in your project:',
+        when: ({confirmProblems}) => confirmProblems,
+        validate: problemsAndBugsInput => {
+            if(problemsAndBugsInput){
+                return true;
+            }
+            else{
+                console.log('Describe common problems and bugs in your project!');
+                return false;
+            }
+        }
+    }
+];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
 function init() {
-    return inquirer.prompt([
-        {//title
-            type: 'input',
-            name: 'title',
-            message: 'What is the title for your project?',
-            validate: titleInput => {
-                if(titleInput){
-                    return true;
-                }
-                else{
-                    console.log('Please enter the title for your project!');
-                    return false;
-                }
-            }
-        },
-        {//description
-            type: 'input',
-            name: 'description',
-            message: 'Enter a description for your project:',
-            validate: description => {
-                if(description){
-                    return true;
-                }
-                else{
-                    console.log('Please enter a description for your project!');
-                    return false;
-                }
-            }
-        },
-        {//confirmTableOfContents
-            type: 'confirm',
-            name: 'confirmTableOfContents',
-            message: 'Would you like to include a Table of Contents?',
-            default: true
-        },
-        {//confirmInstallation
-            type: 'confirm',
-            name: 'confirmInstallation',
-            message: 'Would you like to include an Installation section?',
-            default: true
-        },
-        {//InstallationDescription
-            type: 'input',
-            name: 'installationDescription',
-            message: 'include a description on how to install your application:',
-            when: ({confirmInstallation}) => confirmInstallation,
-            validate: installationDescriptionInput => {
-                if(installationDescriptionInput){
-                    return true;
-                }
-                else{
-                    console.log('Please enter a description for how to install your application!');
-                    return false;
-                }
-            }
-        },
-        {//confirmUsage
-            type: 'confirm',
-            name: 'confirmUsage',
-            message: 'Would you like to include a Usage section?',
-            default: true
-        },
-        {//usageDescription
-            type: 'input',
-            name: 'usageDescription',
-            message: 'include a description on how the application is intended to be used:',
-            when: ({confirmUsage}) => confirmUsage,
-            validate: usageDescriptionInput => {
-                if(usageDescriptionInput){
-                    return true;
-                }
-                else{
-                    console.log('Please enter a description on how to use your application!');
-                    return false;
-                }
-            }
-        },
-        {//confirmUsageSS
-            type: 'confirm',
-            name: 'confirmUsageSS',
-            message: 'Would you like to include a screenshot of your application?',
-            default: true
-        },
-        {//usageImage
-            type: 'input',
-            name: 'usageImage',
-            message: "Provide relative path from your directory's root to the screenshot of your application:",
-            when: ({confirmUsageSS}) => confirmUsageSS,
-            validate: usageDescriptionInput => {
-                if(usageDescriptionInput){
-                    return true;
-                }
-                else{
-                    console.log("Provide relative path from your directory's root to the screenshot of your application!");
-                    return false;
-                }
-            }
-        },
-        {//confirmLicense
-            type: 'confirm',
-            name: 'confirmLicense',
-            message: 'Would you like to include a License?',
-            default: true
-        },
-        {//license
-            type: 'input',
-            name: 'license',
-            message: 'Enter License name:',
-            when: ({confirmLicense}) => confirmLicense,
-            validate: licenseInput => {
-                if(licenseInput){
-                    return true;
-                }
-                else{
-                    console.log('Please enter a name for the License!');
-                    return false;
-                }
-            }
-        },
-        {//confirmContributing
-            type: 'confirm',
-            name: 'confirmContributing',
-            message: 'Would you like to include a Contributing section?',
-            default: true
-        },
-        {//contributingGuidelines
-            type: 'input',
-            name: 'contributingGuidelines',
-            message: 'Please specify the guidelines for contributing:',
-            when: ({confirmContributing}) => confirmContributing,
-            validate: contributingGuidelinesInput => {
-                if(contributingGuidelinesInput){
-                    return true;
-                }
-                else{
-                    console.log('Please specify the guidelines for contributing!');
-                    return false;
-                }
-            }
-        },
-        {//confirmTests
-            type: 'confirm',
-            name: 'confirmTests',
-            message: 'Would you like to include a Tests section?',
-            default: true
-        },
-        {//tests
-            type: 'input',
-            name: 'tests',
-            message: 'Give users explicit instructions on how to run all necessary tests:',
-            when: ({confirmTests}) => confirmTests,
-            validate: testsInput => {
-                if(testsInput){
-                    return true;
-                }
-                else{
-                    console.log('Provide instructions on how to run all necessary tests!');
-                    return false;
-                }
-            }
-        },
-        {//confirmProblemsAndBugs
-            type: 'confirm',
-            name: 'confirmProblemsAndBugs',
-            message: 'Would you like to include a "Common Problems and Bugs" section?',
-            default: true
-        },
-        {//problemsAndBugs
-            type: 'input',
-            name: 'problemsAndBugs',
-            message: 'Describe common problems and bugs in your project:',
-            when: ({confirmProblems}) => confirmProblems,
-            validate: problemsAndBugsInput => {
-                if(problemsAndBugsInput){
-                    return true;
-                }
-                else{
-                    console.log('Describe common problems and bugs in your project!');
-                    return false;
-                }
-            }
-        }
-      ]);
+    inquirer.prompt(questions)
+        .then(readMeData => {
+            return generateReadMe(readMeData);
+        })
+        .then(readMeInfo => {
+            console.log(readMeInfo);
+        });
 }
 
 // Function call to initialize app
-init()
-    .then(readMeData => {
-        console.log(readMeData);
-    });
+init();
 
 /*
 ## License (Recommended)
