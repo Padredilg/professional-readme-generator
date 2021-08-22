@@ -46,14 +46,14 @@ const questions = [
     {//installationDescription
         type: 'input',
         name: 'installationDescription',
-        message: 'include a description on how to install your application:',
+        message: 'Please include a description on how to install your application:',
         when: ({confirmInstallation}) => confirmInstallation,
         validate: installationDescriptionInput => {
             if(installationDescriptionInput){
                 return true;
             }
             else{
-                console.log('Please enter a description for how to install your application!');
+                console.log('Enter a description for how to install your application!');
                 return false;
             }
         }
@@ -67,14 +67,14 @@ const questions = [
     {//usageDescription
         type: 'input',
         name: 'usageDescription',
-        message: 'include a description on how the application is intended to be used:',
+        message: 'Please include a description on how the application is intended to be used:',
         when: ({confirmUsage}) => confirmUsage,
         validate: usageDescriptionInput => {
             if(usageDescriptionInput){
                 return true;
             }
             else{
-                console.log('Please enter a description on how to use your application!');
+                console.log('Enter a description on how to use your application!');
                 return false;
             }
         }
@@ -174,7 +174,7 @@ const questions = [
         type: 'input',
         name: 'problemsAndBugs',
         message: 'Describe common problems and bugs in your project:',
-        when: ({confirmProblems}) => confirmProblems,
+        when: ({confirmProblemsAndBugs}) => confirmProblemsAndBugs,
         validate: problemsAndBugsInput => {
             if(problemsAndBugsInput){
                 return true;
@@ -188,7 +188,25 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    return new Promise((resolve, reject) => {
+        fs.writeFile(fileName, data, err => {
+          // if there's an error, reject the Promise and send the error to the Promise's `.catch()` method
+          if (err) {
+            reject(err);
+            // return out of the function here to make sure the Promise doesn't accidentally execute the resolve() function as well
+            return;
+          }
+    
+          // if everything went well, resolve the Promise and send the successful data to the `.then()` method
+          resolve({
+            ok: true,
+            message: 'README.md Successfuly created!'
+          });
+        });
+  
+      });
+}
 
 // TODO: Create a function to initialize app
 function init() {
@@ -197,8 +215,8 @@ function init() {
             return generateReadMe(readMeData);
         })
         .then(readMeInfo => {
-            console.log(readMeInfo);
-            //Will writefile() with this info to the README in the root.
+            //console.log(readMeInfo);
+            writeToFile('./NEWPROJECTREADME.md', readMeInfo)
         });
 }
 

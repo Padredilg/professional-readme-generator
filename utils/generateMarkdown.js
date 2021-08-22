@@ -153,5 +153,16 @@ ${generateProblemsAndBugs(data.confirmProblemsAndBugs, data.problemsAndBugs)}
 }
 //now need to make license stuff work
 //and get all this info to render on the README.md
+//check whether the spacing is being reflected on the actual readme product
+
+/*
+To fix spacing problem:
+Have another function like generateRestOfReadMe(data) receive data and declare an empty array
+Then use series of if statements to add sections to the array only when confirmed.
+
+or
+
+just put one in front of the other
+*/
 
 module.exports = generateMarkdown;
