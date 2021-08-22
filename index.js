@@ -43,7 +43,7 @@ const questions = [
         message: 'Would you like to include an Installation section?',
         default: true
     },
-    {//InstallationDescription
+    {//installationDescription
         type: 'input',
         name: 'installationDescription',
         message: 'include a description on how to install your application:',
@@ -83,11 +83,12 @@ const questions = [
         type: 'confirm',
         name: 'confirmUsageSS',
         message: 'Would you like to include a screenshot of your application?',
-        default: true
+        default: true,
+        when: ({confirmUsage}) => confirmUsage
     },
     {//usageImage
         type: 'input',
-        name: 'usageImage',
+        name: 'usageImagePath',
         message: "Provide relative path from your directory's root to the screenshot of your application:",
         when: ({confirmUsageSS}) => confirmUsageSS,
         validate: usageDescriptionInput => {
@@ -197,6 +198,7 @@ function init() {
         })
         .then(readMeInfo => {
             console.log(readMeInfo);
+            //Will writefile() with this info to the README in the root.
         });
 }
 
@@ -235,6 +237,9 @@ THEN I am taken to the corresponding section of the README
 if user answers no, then change the value of original prompt to false*/
 
 /*
+## Built With
+    get from portfolio generator
+
 ## Credits
     probably needs a separate function to perform this 
 
