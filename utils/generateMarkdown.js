@@ -21,32 +21,32 @@ function generateTableOfContents(confirm, data){
     const trueConfirms = [];
 
     if(data.confirmInstallation){
-      trueConfirms.push('* [Installation](#Installation)');
+      trueConfirms.push('[Installation](#Installation)');
     }
     if(data.confirmUsage){
-      trueConfirms.push('* [Usage](#Usage)');
+      trueConfirms.push('[Usage](#Usage)');
     }
     if(data.confirmLicense){
-      trueConfirms.push('* [License](#License)');
+      trueConfirms.push('[License](#License)');
     }
     if(data.confirmLicense){
-      trueConfirms.push('* [License](#License)');
+      trueConfirms.push('[License](#License)');
     }
     if(data.confirmContributing){
-      trueConfirms.push('* [Contributing](#Contributing)');
+      trueConfirms.push('[Contributing](#Contributing)');
     }
     if(data.confirmTests){
-      trueConfirms.push('* [Tests](#Tests)');
+      trueConfirms.push('[Tests](#Tests)');
     }
     if(data.confirmProblemsAndBugs){
-      trueConfirms.push('* [ProblemsAndBugs](#ProblemsAndBugs)');
+      trueConfirms.push('[ProblemsAndBugs](#ProblemsAndBugs)');
     }
     
     const tableOfContentTitles = trueConfirms.join('</br>')
 
     //first must be description by default
     return `## Table of Contents
-* [Description](#Description)</br>
+[Description](#Description)</br>
 ${tableOfContentTitles}
 `
   }
@@ -162,7 +162,7 @@ Then use series of if statements to add sections to the array only when confirme
 
 or
 
-just put one in front of the other
+maybe generateTableOfContents could loop through all elements somehow and only add the ones whose confirms are true 
 */
 
 module.exports = generateMarkdown;

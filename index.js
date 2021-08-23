@@ -215,7 +215,6 @@ function init() {
             return generateReadMe(readMeData);
         })
         .then(readMeInfo => {
-            //console.log(readMeInfo);
             writeToFile('./NEWPROJECTREADME.md', readMeInfo)
         });
 }
