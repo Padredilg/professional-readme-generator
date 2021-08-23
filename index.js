@@ -110,7 +110,18 @@ const questions = [
     {//license
         type: 'list',
         name: 'license',
-        choices: ['MIT License', 'GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'Boost Software License 1.0', 'The Unlicense'],
+        choices: [//I inserted those @ to use a split at the @ later and retrieve bothe the badge and the badge's name
+            {value: 'GNU AGPL v3@[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)', name: 'AGPL v3'},
+            {value: 'GNU GPL v3@[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)', name: 'GPL v3'},
+            {value: 'GNU LGPL v3@[![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)', name: 'LGPL v3'},
+            {value: 'Mozilla Public License 2.0@[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)', name: 'Mozilla Public License 2.0'},
+            {value: 'Apache 2.0 License@[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)', name: 'Apache 2.0 License'},
+            {value: 'MIT License@[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)', name: 'The MIT License'},
+            {value: 'Boost Software License 1.0@[![License](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)', name: 'Boost Software License 1.0'},
+            {value: 'Unlicense@[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)', name: 'The Unlicense'},
+            
+            
+        ],
         message: 'Choose a license:',
         when: ({confirmLicense}) => confirmLicense
     },

@@ -1,19 +1,13 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {
-  console.log("Badge Generated for " + license);
-}
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {
-  console.log("Link Generated for " + license);
-}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {
-  console.log("License Section Generated for " + license);
+function renderLicenseBadge(confirm, license) {
+  if(confirm){
+    //put badge before table of contents
+    let licenseValue = license.split('@')[1];
+    let licenseUrl = license.split('(')[2].split(')')[0];
+    return `<a href='${licenseUrl}'>${licenseValue}</a>`
+  }
+  else{
+    return '';
+  }
 }
 
 function generateTableOfContents(confirm, data){
@@ -91,22 +85,17 @@ ${displayImage}
 
 function generateLicense(confirm, license){
   if(confirm){
-    renderLicenseBadge(license);
-    renderLicenseLink(license);
-    renderLicenseSection(license);
+    let licenseName = license.split('@')[0];
+    let licenseUrl = license.split('(')[2].split(')')[0];
 
     return `## License
-This application is covered under the ${license}
+This application is covered under the <a href='${licenseUrl}'>${licenseName}</a>
 `
   }
   else{
     return '';
   }
 }
-
-/*## License
-
-[MIT](./LICENSE.txt) */
 
 function generateContributing(confirm, guidelines){
   if(confirm){
@@ -162,6 +151,7 @@ ${generateTableOfContents(data.confirmTableOfContents, data)}
 ## Description
 ${data.description}
 
+${renderLicenseBadge(data.confirmLicense, data.license)}
 ${generateInstallation(data.confirmInstallation, data.installationDescription)}
 ${generateUsage(data.confirmUsage, data.usageDescription, data)}
 ${generateLicense(data.confirmLicense, data.license)}
