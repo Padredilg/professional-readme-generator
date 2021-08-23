@@ -22,7 +22,7 @@ This application is covered under the <a href='https://opensource.org/licenses/M
 With the exception of this "Sample" section, this read me file was generated using this application.
 Here follows another example of a Read Me file that was created using this application:
 <iframe src="https://drive.google.com/file/d/1taJY2Hyk6X_9pVd6dUZIfIHu4l7n5yX6/preview" width="640" height="480"></iframe>
-<img alt="screenshot from website" src="./assets/images/example.png "></img>
+</br><img alt="screenshot from website" src="./assets/images/example.png "></img>
 
 ## Contributing
 If you would like to contribute to my job, please contact me and we will find out a way for that to happen.
