@@ -258,20 +258,10 @@ function init() {
 
 init();
 
-/*
-## License (Recommended)
-    License name: --> REQUIRES BADGE NEAR THE TOP
-*/
+//Populate this project's README
+//Make a Walkthrough Video following the challenge's criteria
+//include 1-2 pictures of sample readmes created with app on README
 
-//ADD LICENSE'S BADGE RIGHT UNDER THE PROJECT'S TITLE AND BEFORE DESCRIPTION OF THE README
-
-//Increment the actual README for this project with tests and video explaining through with screencastify
-//Check what else is missing from the grading criteria and implement it
-
-/*
-WHEN I choose a license for my application from a list of options
-THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
-*/
 
 //Future Improvement:
 

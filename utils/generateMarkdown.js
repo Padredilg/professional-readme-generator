@@ -3,7 +3,8 @@ function renderLicenseBadge(confirm, license) {
     //put badge before table of contents
     let licenseValue = license.split('@')[1];
     let licenseUrl = license.split('(')[2].split(')')[0];
-    return `<a href='${licenseUrl}'>${licenseValue}</a>`
+    return `<a href='${licenseUrl}'>${licenseValue}</a>
+  `
   }
   else{
     return '';
@@ -161,10 +162,6 @@ ${generateQuestions(data.confirmQuestions, data.githubUserName, data.userEmail)}
 }
 
 module.exports = generateMarkdown;
-
-
-//now need to make license stuff work
-//check whether the spacing is being reflected on the actual readme product
 
 //fix table of contents problems
 /*

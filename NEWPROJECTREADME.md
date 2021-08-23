@@ -1,33 +1,32 @@
-# Test
-  
+# Professional Read Me Generator
+<a href='https://opensource.org/licenses/MIT'>[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)</a>
+
 ## Table of Contents
 [Description](#Description)</br>
 [Installation](#Installation)</br>[Usage](#Usage)</br>[License](#License)</br>[License](#License)</br>[Contributing](#Contributing)</br>[Tests](#Tests)</br>[Problems](#Problems)</br>[Questions](#Questions)
 
 ## Description
-testing
-
-<a href='https://www.gnu.org/licenses/gpl-3.0'>[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)</a>
+The purpose of this application is to present a more intuitive way for developers to write their ReadMe files. Instead of writing section by section, this application will ask the user if they would like the next section to be present in their files, and if yes, the user will be prompted to enter the necessary info. In short, it works as a questionnaire that builds your ReadMe for you, rather than a blank page.
 ## Installation
-download it to install
+To install this application, you will have to clone this code first and have it in your local repo. Make sure that you have Node.JS installed in your system, and run an npm install inquirer so that you have all of the necessary tools to proceed. Finally, make sure you add node_modules and .DS_Store in the .gitignore file to avoid git from tracking unwanted files by mistake.
 
 ## Usage
-test it</br>
-<img alt="screenshot from website" src="./assets/images/img.png"></img>
+Once everything is set up, the user may run the command "node index" or "node index.js" and the program will start asking questions in the terminal. While a few of the questions are required to be answered, most questions pertain to whether the user would like to add a certain section to their Read Me file, and those are up to the user to decide by selecting y for yes, and n for no.</br>
+<img alt="screenshot from website" src="./assets/images/sample "></img>
 
 ## License
-This application is covered under the <a href='https://www.gnu.org/licenses/gpl-3.0'>GNU GPL v3</a>
+This application is covered under the <a href='https://opensource.org/licenses/MIT'>MIT License</a>
 
 ## Contributing
-You can sen me money through zelle
+If you would like to contribute to my job, please contact me and we will find out a way for that to happen.
 
 ## Tests
-test test test
+Not much can be tested in this application, other than running the application a few times and seeing the Read Me being created with some sections at first, and different sections later.
 
 ## Problems
-the problem is that it isnt perfect
+One problem with this application is that, although the end result does not look like it, the Table of Contents section is not separating the section titles one per line, but instead, they are each following one another and separated by </br>.
 
 ## Questions
-<a href='https://github.com/padredilg'>padredilg</a></br>
+<a href='https://github.com/Padredilg'>Padredilg</a></br>
 If you have any questions, you may email at padredilg@knights.ucf.edu
 
