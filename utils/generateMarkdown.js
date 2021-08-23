@@ -39,7 +39,10 @@ function generateTableOfContents(confirm, data){
       trueConfirms.push('[Tests](#Tests)');
     }
     if(data.confirmProblemsAndBugs){
-      trueConfirms.push('[ProblemsAndBugs](#ProblemsAndBugs)');
+      trueConfirms.push('[Problems](#Problems)');
+    }
+    if(data.confirmQuestions){
+      trueConfirms.push('[Questions](#Questions)');
     }
     
     const tableOfContentTitles = trueConfirms.join('</br>')
@@ -125,8 +128,20 @@ ${tests}
 
 function generateProblemsAndBugs(confirm, problemsAndBugs){
   if(confirm){
-    return `## Problems and Bugs
+    return `## Problems
 ${problemsAndBugs}
+`
+  }
+  else{
+    return '';
+  }
+}
+
+function generateQuestions(confirm, githubUserName, userEmail){
+  if(confirm){
+    return `## Questions
+${githubUserName}
+If you have any questions, you may send me an email at ${userEmail}
 `
   }
   else{
@@ -149,11 +164,19 @@ ${generateLicense(data.confirmLicense, data.license)}
 ${generateContributing(data.confirmContributing, data.contributingGuidelines)}
 ${generateTests(data.confirmTests, data.tests)}
 ${generateProblemsAndBugs(data.confirmProblemsAndBugs, data.problemsAndBugs)}
+${generateQuestions(data.confirmQuestions, data.githubUserName, data.userEmail)}
 `;
 }
 //now need to make license stuff work
 //and get all this info to render on the README.md
 //check whether the spacing is being reflected on the actual readme product
+
+//fix table of contents problems
+/*
+include questions with Github username and email
+  then the function to create the section
+  then the if statement for the table of contents
+*/
 
 /*
 To fix spacing problem:

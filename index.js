@@ -184,10 +184,45 @@ const questions = [
                 return false;
             }
         }
+    },
+    {//confirmQuestions
+        type: 'confirm',
+        name: 'confirmQuestions',
+        message: 'Would you like to include a "Questions" section for users to contact you if they need?',
+        default: true
+    },
+    {//githubUserName
+        type: 'input',
+        name: 'githubUserName',
+        message: 'Please enter your Github Username:',
+        when: ({confirmQuestions}) => confirmQuestions,
+        validate: githubUserNameInput => {
+            if(githubUserNameInput){
+                return true;
+            }
+            else{
+                console.log('Enter your Github Username!');
+                return false;
+            }
+        }
+    },
+    {//userEmail
+        type: 'input',
+        name: 'userEmail',
+        message: 'Please enter your contact email:',
+        when: ({confirmQuestions}) => confirmQuestions,
+        validate: userEmailInput => {
+            if(userEmailInput){
+                return true;
+            }
+            else{
+                console.log('Enter your contact email!');
+                return false;
+            }
+        }
     }
 ];
 
-// TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     return new Promise((resolve, reject) => {
         fs.writeFile(fileName, data, err => {
@@ -208,7 +243,6 @@ function writeToFile(fileName, data) {
       });
 }
 
-// TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions)
         .then(readMeData => {
@@ -219,7 +253,6 @@ function init() {
         });
 }
 
-// Function call to initialize app
 init();
 
 /*
@@ -238,10 +271,6 @@ THEN this is added to the section of the README entitled Questions, with a link 
 
 WHEN I enter my email address
 THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
-
-
-WHEN I click on the links in the Table of Contents
-THEN I am taken to the corresponding section of the README
 */
 
 
