@@ -140,7 +140,7 @@ ${problemsAndBugs}
 function generateQuestions(confirm, githubUserName, userEmail){
   if(confirm){
     return `## Questions
-<a href='https://github.com/${githubUserName}>${githubUserName}</a></br>
+<a href='https://github.com/${githubUserName}'>${githubUserName}</a></br>
 If you have any questions, you may email at ${userEmail}
 `
   }
