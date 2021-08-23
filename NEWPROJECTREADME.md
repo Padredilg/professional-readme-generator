@@ -1,25 +1,32 @@
-# Test Project
+# project
   
 ## Table of Contents
 [Description](#Description)</br>
-[Installation](#Installation)</br>[Usage](#Usage)</br>[License](#License)</br>[License](#License)</br>[Questions](#Questions)
+[Installation](#Installation)</br>[Usage](#Usage)</br>[License](#License)</br>[License](#License)</br>[Contributing](#Contributing)</br>[Tests](#Tests)</br>[Problems](#Problems)</br>[Questions](#Questions)
 
 ## Description
-A project that serves as test
+description of project
 
 ## Installation
-To install just install
+install the project by installing it
 
 ## Usage
-Test with this project to know you are doing the right thing!
-
+Use the application as you may
+<img alt="screenshot from website" src="./assets/images/img.png"></img>
 
 ## License
 MIT
 
+## Contributing
+Contribute by contributing =)
 
+## Tests
+Test by testing, duh
 
+## Problems
+One of the problems is that the application isnt perfect
 
 ## Questions
-padredilg
-If you have any questions, you may send me an email at padredilg@testemail.com
+<a href='https://github.com/padredilg>padredilg</a></br>
+If you have any questions, you may email at padredilg@test.com
+
