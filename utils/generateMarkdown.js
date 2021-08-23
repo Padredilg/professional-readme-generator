@@ -159,20 +159,3 @@ ${generateQuestions(data.confirmQuestions, data.githubUserName, data.userEmail)}
 }
 
 module.exports = generateMarkdown;
-
-//fix table of contents problems
-/*
-include questions with Github username and email
-  then the function to create the section
-  then the if statement for the table of contents
-*/
-
-/*
-To fix spacing problem:
-Have another function like generateRestOfReadMe(data) receive data and declare an empty array
-Then use series of if statements to add sections to the array only when confirmed.
-
-or
-
-maybe generateTableOfContents could loop through all elements somehow and only add the ones whose confirms are true 
-*/

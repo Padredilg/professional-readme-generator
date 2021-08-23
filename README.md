@@ -2,15 +2,15 @@
 <a href='https://opensource.org/licenses/MIT'>[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)</a>
 
 ## Table of Contents
-[Description](#Description)</br>
-[Installation](#Installation)</br>
-[Usage](#Usage)</br>
-[License](#License)</br>
-[Sample](#Sample)</br>
-[Contributing](#Contributing)</br>
-[Tests](#Tests)</br>
-[Problems](#Problems)</br>
-[Questions](#Questions)
+* [Description](#Description)</br>
+* [Installation](#Installation)</br>
+* [Usage](#Usage)</br>
+* [License](#License)</br>
+* [Sample](#Sample)</br>
+* [Contributing](#Contributing)</br>
+* [Tests](#Tests)</br>
+* [Problems](#Problems)</br>
+* [Questions](#Questions)
 
 ## Description
 The purpose of this application is to present a more intuitive way for developers to write their ReadMe files. Instead of writing section by section, this application will ask the user if they would like the next section to be present in their files, and if yes, the user will be prompted to enter the necessary info. In short, it works as a questionnaire that builds your ReadMe for you, rather than a blank page.
