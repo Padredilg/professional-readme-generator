@@ -140,8 +140,8 @@ ${problemsAndBugs}
 function generateQuestions(confirm, githubUserName, userEmail){
   if(confirm){
     return `## Questions
-${githubUserName}
-If you have any questions, you may send me an email at ${userEmail}
+<a href='https://github.com/${githubUserName}>${githubUserName}</a></br>
+If you have any questions, you may email at ${userEmail}
 `
   }
   else{

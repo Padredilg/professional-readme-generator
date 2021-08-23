@@ -21,5 +21,5 @@ MIT
 
 
 ## Questions
-padredilg (This must still be converted to link to repo)
+padredilg
 If you have any questions, you may send me an email at padredilg@testemail.com
