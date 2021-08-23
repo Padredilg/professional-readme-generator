@@ -32,7 +32,7 @@ This application is covered under the <a href='https://opensource.org/licenses/M
 ## Sample
 Here is an example of a Read Me file created with this application:
 
-</br><img alt="screenshot from website" src="./assets/images/new-file-generated.png "></img>
+</br><img alt="screenshot from website" src="./assets/images/new-readme.png "></img>
 
 ## Contributing
 If you would like to contribute to my job, please contact me and we will find out a way for that to happen.
