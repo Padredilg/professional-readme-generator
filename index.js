@@ -108,19 +108,11 @@ const questions = [
         default: true
     },
     {//license
-        type: 'input',
+        type: 'list',
         name: 'license',
-        message: 'Enter License name:',
-        when: ({confirmLicense}) => confirmLicense,
-        validate: licenseInput => {
-            if(licenseInput){
-                return true;
-            }
-            else{
-                console.log('Please enter a name for the License!');
-                return false;
-            }
-        }
+        choices: ['MIT License', 'GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'Boost Software License 1.0', 'The Unlicense'],
+        message: 'Choose a license:',
+        when: ({confirmLicense}) => confirmLicense
     },
     {//confirmContributing
         type: 'confirm',
@@ -260,22 +252,15 @@ init();
     License name: --> REQUIRES BADGE NEAR THE TOP
 */
 
+//ADD LICENSE'S BADGE RIGHT UNDER THE PROJECT'S TITLE AND BEFORE DESCRIPTION OF THE README
+
+//Increment the actual README for this project with tests and video explaining through with screencastify
+//Check what else is missing from the grading criteria and implement it
 
 /*
 WHEN I choose a license for my application from a list of options
 THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
-
-WHEN I enter my GitHub username
-THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile
--- did not understand step
-
-WHEN I enter my email address
-THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
 */
-
-
-
-
 
 //Future Improvement:
 

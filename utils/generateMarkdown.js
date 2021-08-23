@@ -80,7 +80,7 @@ function generateUsage(confirm, description, data){
     }
 
     return `## Usage
-${description}
+${description}</br>
 ${displayImage}
 `
   }
@@ -96,13 +96,17 @@ function generateLicense(confirm, license){
     renderLicenseSection(license);
 
     return `## License
-${license}
+This application is covered under the ${license}
 `
   }
   else{
     return '';
   }
 }
+
+/*## License
+
+[MIT](./LICENSE.txt) */
 
 function generateContributing(confirm, guidelines){
   if(confirm){
@@ -167,8 +171,11 @@ ${generateProblemsAndBugs(data.confirmProblemsAndBugs, data.problemsAndBugs)}
 ${generateQuestions(data.confirmQuestions, data.githubUserName, data.userEmail)}
 `;
 }
+
+module.exports = generateMarkdown;
+
+
 //now need to make license stuff work
-//and get all this info to render on the README.md
 //check whether the spacing is being reflected on the actual readme product
 
 //fix table of contents problems
@@ -187,5 +194,3 @@ or
 
 maybe generateTableOfContents could loop through all elements somehow and only add the ones whose confirms are true 
 */
-
-module.exports = generateMarkdown;
