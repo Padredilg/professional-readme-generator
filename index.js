@@ -89,14 +89,14 @@ const questions = [
     {//usageImage
         type: 'input',
         name: 'usageImagePath',
-        message: "Provide relative path from your directory's root to the screenshot of your application:",
+        message: "Provide relative path to the screenshot of your application:",
         when: ({confirmUsageSS}) => confirmUsageSS,
         validate: usageDescriptionInput => {
             if(usageDescriptionInput){
                 return true;
             }
             else{
-                console.log("Provide relative path from your directory's root to the screenshot of your application!");
+                console.log("Provide relative path to the screenshot of your application!");
                 return false;
             }
         }
@@ -252,15 +252,11 @@ function init() {
             return generateReadMe(readMeData);
         })
         .then(readMeInfo => {
-            writeToFile('./NEWPROJECTREADME.md', readMeInfo)
+            writeToFile('./new-readme.md', readMeInfo)
         });
 }
 
 init();
-
-//Populate this project's README
-//Make a Walkthrough Video following the challenge's criteria
-//include 1-2 pictures of sample readmes created with app on README
 
 
 //Future Improvement:
