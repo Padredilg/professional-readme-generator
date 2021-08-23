@@ -146,12 +146,10 @@ If you have any questions, you may email at ${userEmail}
 function generateMarkdown(data) {
 
   return `# ${data.title}
-  
+${renderLicenseBadge(data.confirmLicense, data.license)}
 ${generateTableOfContents(data.confirmTableOfContents, data)}
 ## Description
 ${data.description}
-
-${renderLicenseBadge(data.confirmLicense, data.license)}
 ${generateInstallation(data.confirmInstallation, data.installationDescription)}
 ${generateUsage(data.confirmUsage, data.usageDescription, data)}
 ${generateLicense(data.confirmLicense, data.license)}
