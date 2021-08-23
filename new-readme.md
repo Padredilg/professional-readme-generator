@@ -3,7 +3,7 @@
   
 ## Table of Contents
 [Description](#Description)</br>
-[Usage](#Usage)</br>[License](#License)</br>[License](#License)</br>[Questions](#Questions)
+[Usage](#Usage)</br>[License](#License)</br>[Questions](#Questions)
 
 ## Description
 This is the description

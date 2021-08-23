@@ -24,9 +24,6 @@ function generateTableOfContents(confirm, data){
     if(data.confirmLicense){
       trueConfirms.push('[License](#License)');
     }
-    if(data.confirmLicense){
-      trueConfirms.push('[License](#License)');
-    }
     if(data.confirmContributing){
       trueConfirms.push('[Contributing](#Contributing)');
     }
