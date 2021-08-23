@@ -3,7 +3,14 @@
 
 ## Table of Contents
 [Description](#Description)</br>
-[Installation](#Installation)</br>[Usage](#Usage)</br>[License](#License)</br>[License](#License)</br>[Contributing](#Contributing)</br>[Tests](#Tests)</br>[Problems](#Problems)</br>[Questions](#Questions)
+[Installation](#Installation)</br>
+[Usage](#Usage)</br>
+[License](#License)</br>
+[Sample](#Sample)</br>
+[Contributing](#Contributing)</br>
+[Tests](#Tests)</br>
+[Problems](#Problems)</br>
+[Questions](#Questions)
 
 ## Description
 The purpose of this application is to present a more intuitive way for developers to write their ReadMe files. Instead of writing section by section, this application will ask the user if they would like the next section to be present in their files, and if yes, the user will be prompted to enter the necessary info. In short, it works as a questionnaire that builds your ReadMe for you, rather than a blank page.
@@ -13,18 +20,19 @@ To install this application, you will have to clone this code first and have it 
 ## Usage
 Once everything is set up, the user may run the command "node index" or "node index.js" and the program will start asking questions in the terminal. While a few of the questions are required to be answered, most questions pertain to whether the user would like to add a certain section to their Read Me file, and those are up to the user to decide by selecting y for yes, and n for no.</br></br>
 Below, follows a video explaining how to use the application, along with an image of what the terminal might look like once all questions are answered.</br>
+
+https://user-images.githubusercontent.com/85601336/130485527-ba626a9b-7255-4c95-bfa9-0a8a1eeeb6ef.mp4
+
 <img alt="screenshot from website" src="./assets/images/readme-generator.png "></img>
 
 ## License
 This application is covered under the <a href='https://opensource.org/licenses/MIT'>MIT License</a>
 
+
 ## Sample
-With the exception of this "Sample" section, this read me file was generated using this application.
-Here follows another example of a Read Me file that was created using this application:
+Here is an example of a Read Me file created with this application:
 
-https://user-images.githubusercontent.com/85601336/130485527-ba626a9b-7255-4c95-bfa9-0a8a1eeeb6ef.mp4
-
-</br><img alt="screenshot from website" src="./assets/images/readme-generator.png "></img>
+</br><img alt="screenshot from website" src="./assets/images/new-file-generated.png "></img>
 
 ## Contributing
 If you would like to contribute to my job, please contact me and we will find out a way for that to happen.
