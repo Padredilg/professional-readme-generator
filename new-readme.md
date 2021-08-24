@@ -20,5 +20,5 @@ This application is covered under the <a href='https://opensource.org/licenses/M
 
 ## Questions
 <a href='https://github.com/Padredilg'>Padredilg</a></br>
-If you have any questions, you may email at fake@email.com
+If you have any questions, you may email at padredilg@knights.ucf.edu
 
